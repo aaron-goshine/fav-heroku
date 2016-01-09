@@ -1,0 +1,31 @@
+.selected {
+  outline: 4px dashed tomato;
+}
+
+.postcard {
+  background: linear-gradient(to bottom, $link-color 1%, $light-link 100%);
+  box-sizing: border-box;
+  display: inline-block;
+  margin-bottom: 50px;
+  width: 240px;
+  img {
+    box-sizing: inherit;
+    display: inherit;
+    vertical-align: middle;
+    margin: 0 auto;
+  }
+}
+
+.page {
+  background:$light-link;
+}
+
+#display {
+  padding: $global-margin;
+  margin: $global-margin auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+}

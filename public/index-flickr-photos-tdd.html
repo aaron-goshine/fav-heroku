@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="7" />
+    <style>
+
+      p {
+        border-bottom: 1px dashed #4c4c4c;
+        padding: 10px;
+        margin: 0px;
+      }
+      .selected {
+        border: 4px dashed #c0de01;
+      }
+      .pass {
+        color: green;
+        background-color: #c0de01;
+      }
+
+      .fail {
+        color: red;
+        background-color: #facade;
+      }
+
+      #console {
+        margin: 20px auto;
+        width: 600px;
+        font-family: monospace;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="console">
+    </div>
+    <div id="display" style="display: none"></div>
+    <script type="text/javascript" src="/js/build.js"></script>
+    <script type="text/javascript" src="/js-test/test-util.js"></script>
+    <script>
+      testUtil.testCase("existence", {
+        'test flickrPhotos existence': function () {
+          testUtil.assert('flickrPhotos existence', typeof flickrPhotos === 'object');
+        },
+
+        'test flickrPhotos.cb existence': function () {
+          testUtil.assert('flickrPhotos.cb existence', typeof flickrPhotos.cb === 'function');
+        },
+
+        'test flickrPhotos.clickHandler existence': function () {
+          testUtil.assert('flickrPhotos.clickHandle existence', typeof flickrPhotos.clickHandler === 'function');
+        },
+
+        'test flickrPhotos.dblclickHandler existence': function () {
+          testUtil.assert('flickrPhotos.dblclickHandle existence', typeof flickrPhotos.dblclickHandler === 'function');
+        },
+
+        'test flickrPhotos.generateColClass  existence': function () {
+          testUtil.assert('flickrPhotos.generateColClass  existence', typeof flickrPhotos.generateColClass  === 'function');
+        },
+
+        'test flickrPhotos.generateView  existence': function () {
+          testUtil.assert('flickrPhotos.generateView  existence', typeof flickrPhotos.generateView  === 'function');
+        },
+
+        'test flickrPhotos.onload existence': function () {
+          testUtil.assert('flickrPhotos.onload  existence', typeof flickrPhotos.onload  === 'function');
+        },
+
+        'test flickrStore existence': function () {
+          testUtil.assert('flickrStore existence', typeof flickrStore  === 'object');
+        },
+
+        'test flickrStore.getSelectedByKey existence': function () {
+          testUtil.assert('flickrStore.getSelectedByKey existence', typeof flickrStore.getSelectedByKey  === 'function');
+        },
+
+        'test flickrStore.setSelectedByKey existence': function () {
+        testUtil.assert('flickrStore.setSelectedByKey existence', typeof flickrStore.setSelectedByKey  === 'function');
+      }
+      });
+
+      testUtil.testCase("generateColClass", {
+        'test generateColClass': function () {
+        testUtil.assert('should generate class ', flickrPhotos.generateColClass(1,3) === 'col-2');
+      }
+      });
+
+      var mockModel = {
+        "title": "River Thames at Putney",
+        "link": "http://www.flickr.com/photos/colinevans/23932589345/",
+        "media": {"m":"http://farm2.staticflickr.com/1672/23932589345_574e75423f_m.jpg"},
+        "date_taken": "2015-12-23T17:41:28-08:00",
+        "description": " <p><a href=\"http://www.flickr.com/people/colinevans/\">Colin_Evans<\/a> posted a photo:<\/p> <p><a href=\"http://www.flickr.com/photos/colinevans/23932589345/\" title=\"River Thames at Putney\"><img src=\"http://farm2.staticflickr.com/1672/23932589345_574e75423f_m.jpg\" width=\"240\" height=\"159\" alt=\"River Thames at Putney\" /><\/a><\/p> ",
+        "published": "2015-12-23T21:00:46Z",
+        "author": "nobody@flickr.com (Colin_Evans)",
+        "author_id": "39024181@N08",
+        "tags": "uk blue sunset england sky orange reflection london water thames skyline architecture night clouds buildings reflections river landscape boats evening pier sundown dusk putney stargarter"
+      };
+
+      testUtil.testCase("generateView", {
+        'test generateView': function () {
+        var postCardInstance = flickrPhotos.generateView(mockModel, 0);
+        testUtil.assert('should generate view for model ', postCardInstance.tagName === 'DIV');
+                        document.body.appendChild(postCardInstance);
+                        postCardInstance.addEventListener('click', flickrPhotos.clickHandler, true);
+      }
+      });
+
+      testUtil.testCase("flickrStore interface", {
+        'test store interface': function () {
+        flickrStore.setSelectedByKey('test', true);
+        var result = flickrStore.getSelectedByKey('test');
+        testUtil.assert('should generate view for model ', result);
+
+        flickrStore.setSelectedByKey('test', false);
+        var result2 = flickrStore.getSelectedByKey('test');
+        testUtil.assert('should generate view for model ',result2 === null );
+
+      }
+      });
+
+    </script>
+  </body>
+</html>

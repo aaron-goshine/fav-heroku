@@ -1,8 +1,16 @@
-# flickr-fav-images
+# A basic implementation flickr photos API
 
-- Start up your favourite HTTP server form within this root dirctory
+- nodejs needed to be installed
 
-- User chrome or any modern webbrowser to navigate the pages..enjoy :)
- 
+  `git clone git@github.com:aaron-goshine/fav-heroku.git`
 
-# fav-heroku
+  `cd fav-heroku`
+
+  `npm install`
+
+  `gulp`
+
+  `npm start`
+
+- A running version is a available at [http://flickfav.herokuapp.com/](http://flickfav.herokuapp.com/)
+- enjoy ;)

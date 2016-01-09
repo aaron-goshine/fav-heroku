@@ -1,0 +1,23 @@
+
+.sidebar {
+  display: none;
+  border-size: border-box;
+  width: 200px;
+  @media (min-width: $tablet_and_larger) {
+    display: block;
+    float: right;
+    margin-left: 0;
+  }
+
+  h3 {
+    margin: 0 0 1.40em 0;
+  }
+
+  .sidebar-unit {
+    margin-bottom: 2em;
+    .square-icon {
+      @include wireframe-panel;
+      @include box-ratio(100%, 100%);
+    }
+  }
+}

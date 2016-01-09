@@ -1,0 +1,129 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: #00bed5;
+}
+
+body {
+  background-color: white;
+  font-family: sans-serif;
+}
+
+h2 {
+  margin: 0 0 0.5em 0;
+  font-size: 2em;
+}
+
+h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.5em;
+}
+
+.page {
+  min-width: 320px;
+  margin: 0 auto;
+  max-width: 860px;
+  position: relative;
+}
+
+section {
+  margin: 1em;
+}
+
+.short-menu {
+  display: inline-block;
+  background-color: #00bed5;
+  padding: 1em;
+  text-align: center;
+  color: white;
+}
+@media (min-width: 860px) {
+  .short-menu {
+    display: none;
+  }
+}
+
+.main-menu {
+  text-align: center;
+}
+.main-menu a {
+  text-decoration: none;
+  color: white;
+}
+@media (min-width: 860px) {
+  .main-menu {
+    border-spacing: 1em;
+    border-collapse: separate;
+    display: table;
+    width: calc(100% + 2em);
+    margin-left: -1em;
+  }
+}
+.main-menu ul.full-menu {
+  display: none;
+}
+@media (min-width: 860px) {
+  .main-menu ul.full-menu {
+    display: table-row;
+    width: 100%;
+  }
+}
+.main-menu ul.full-menu li {
+  background-color: #00bed5;
+  padding: 1em;
+  text-align: center;
+  color: white;
+  display: table-cell;
+  width: calc(100% / 5);
+}
+
+.selected {
+  outline: 4px dashed tomato;
+}
+
+.postcard {
+  background: linear-gradient(to bottom, #00bed5 1%, #CDFAFF 100%);
+  box-sizing: border-box;
+  display: inline-block;
+  margin-bottom: 50px;
+  width: 240px;
+}
+.postcard img {
+  box-sizing: inherit;
+  display: inherit;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+.page {
+  background: #CDFAFF;
+}
+
+#display {
+  padding: 1em;
+  margin: 1em auto;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}

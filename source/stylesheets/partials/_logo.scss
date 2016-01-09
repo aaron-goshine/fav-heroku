@@ -1,0 +1,33 @@
+/** --------------------------------------
+ *  The logo
+ **/
+
+.named-logo {
+  @include clearfix;
+  height: 62px;
+  margin-bottom: 1em;
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+  }
+
+  .logo {
+    @include wireframe-panel;
+    height: inherit;
+    float: left;
+    width: 62px;
+    margin-right: 0.5em;
+  }
+
+  .company-name {
+    height: inherit;
+    float: left;
+    line-height: 62px;
+    font-size: 24px;
+    @media (min-width: $tablet_and_larger) {
+      font-size: 40px;
+    }
+  }
+
+}

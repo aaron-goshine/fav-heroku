@@ -1,0 +1,30 @@
+.social-navigation {
+  text-align: center;
+  & :nth-child(2n) {
+    margin: 0 20%;
+  }
+
+  @media(min-width: $tablet_and_larger) {
+    position: absolute;
+    top: $global-margin;
+    right: $global-margin;
+    width: $min-width;
+    text-align: right;
+    & :nth-child(2n) {
+      margin: 0 $global-margin;
+    }
+
+  }
+  a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    text-decoration: none;
+  }
+
+}
+

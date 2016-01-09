@@ -1,0 +1,38 @@
+.content {
+  @include clearfix;
+  @media (min-width: $tablet_and_larger) {
+    float: left;
+    width: calc(100% - (4em + 200px));
+  }
+
+  .main-media {
+    @include wireframe-panel;
+    @include box-ratio(100%, 75%);
+  }
+
+  article {
+    @include clearfix;
+    padding-bottom:  120px;
+    @media (min-width: $tablet_and_larger) {
+      padding-bottom:  10px;
+    }
+
+    .more-navigation {
+      position: absolute;
+      bottom: 120px;
+      width: 120px;
+      left: $global-margin;
+      ul{
+        padding-left: $global-margin;
+      }
+
+      @media (min-width: $tablet_and_larger) {
+        @include wireframe-panel;
+        position: static;
+        float: right;
+        margin: $global-margin 0 0 $global-margin;
+      }
+    }
+  }
+}
+

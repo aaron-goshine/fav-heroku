@@ -1,0 +1,267 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: #00bed5;
+}
+
+body {
+  background-color: white;
+  font-family: sans-serif;
+}
+
+h2 {
+  margin: 0 0 0.5em 0;
+  font-size: 2em;
+}
+
+h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.5em;
+}
+
+.page {
+  min-width: 320px;
+  margin: 0 auto;
+  max-width: 860px;
+  position: relative;
+}
+
+section {
+  margin: 1em;
+}
+
+.content:before, .content:after {
+  content: " ";
+  display: table;
+}
+.content:after {
+  clear: both;
+}
+@media (min-width: 860px) {
+  .content {
+    float: left;
+    width: calc(100% - (4em + 200px));
+  }
+}
+.content .main-media {
+  background-color: whitesmoke;
+  border: 1px dashed #00bed5;
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+}
+.content .main-media .media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.content article {
+  padding-bottom: 120px;
+}
+.content article:before, .content article:after {
+  content: " ";
+  display: table;
+}
+.content article:after {
+  clear: both;
+}
+@media (min-width: 860px) {
+  .content article {
+    padding-bottom: 10px;
+  }
+}
+.content article .more-navigation {
+  position: absolute;
+  bottom: 120px;
+  width: 120px;
+  left: 1em;
+}
+.content article .more-navigation ul {
+  padding-left: 1em;
+}
+@media (min-width: 860px) {
+  .content article .more-navigation {
+    background-color: whitesmoke;
+    border: 1px dashed #00bed5;
+    position: static;
+    float: right;
+    margin: 1em 0 0 1em;
+  }
+}
+
+.sidebar {
+  display: none;
+  border-size: border-box;
+  width: 200px;
+}
+@media (min-width: 860px) {
+  .sidebar {
+    display: block;
+    float: right;
+    margin-left: 0;
+  }
+}
+.sidebar h3 {
+  margin: 0 0 1.40em 0;
+}
+.sidebar .sidebar-unit {
+  margin-bottom: 2em;
+}
+.sidebar .sidebar-unit .square-icon {
+  background-color: whitesmoke;
+  border: 1px dashed #00bed5;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+}
+.sidebar .sidebar-unit .square-icon .media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#footer {
+  margin: 1em;
+  border: 1px solid silver;
+  clear: both;
+  padding: 1em 0;
+}
+#footer:before, #footer:after {
+  content: " ";
+  display: table;
+}
+#footer:after {
+  clear: both;
+}
+
+/** --------------------------------------
+ *  The logo
+ **/
+.named-logo {
+  height: 62px;
+  margin-bottom: 1em;
+}
+.named-logo:before, .named-logo:after {
+  content: " ";
+  display: table;
+}
+.named-logo:after {
+  clear: both;
+}
+.named-logo a {
+  color: #00bed5;
+  text-decoration: none;
+}
+.named-logo .logo {
+  background-color: whitesmoke;
+  border: 1px dashed #00bed5;
+  height: inherit;
+  float: left;
+  width: 62px;
+  margin-right: 0.5em;
+}
+.named-logo .company-name {
+  height: inherit;
+  float: left;
+  line-height: 62px;
+  font-size: 24px;
+}
+@media (min-width: 860px) {
+  .named-logo .company-name {
+    font-size: 40px;
+  }
+}
+
+.short-menu {
+  display: inline-block;
+  background-color: #00bed5;
+  padding: 1em;
+  text-align: center;
+  color: white;
+}
+@media (min-width: 860px) {
+  .short-menu {
+    display: none;
+  }
+}
+
+.main-menu {
+  text-align: center;
+}
+.main-menu a {
+  text-decoration: none;
+  color: white;
+}
+@media (min-width: 860px) {
+  .main-menu {
+    border-spacing: 1em;
+    border-collapse: separate;
+    display: table;
+    width: calc(100% + 2em);
+    margin-left: -1em;
+  }
+}
+.main-menu ul.full-menu {
+  display: none;
+}
+@media (min-width: 860px) {
+  .main-menu ul.full-menu {
+    display: table-row;
+    width: 100%;
+  }
+}
+.main-menu ul.full-menu li {
+  background-color: #00bed5;
+  padding: 1em;
+  text-align: center;
+  color: white;
+  display: table-cell;
+  width: calc(100% / 5);
+}
+
+.social-navigation {
+  text-align: center;
+}
+.social-navigation :nth-child(2n) {
+  margin: 0 20%;
+}
+@media (min-width: 860px) {
+  .social-navigation {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 320px;
+    text-align: right;
+  }
+  .social-navigation :nth-child(2n) {
+    margin: 0 1em;
+  }
+}
+.social-navigation a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  text-decoration: none;
+}
